@@ -1,7 +1,7 @@
 Chebyshev-polynomials
 =====================
 
- C++ functions which evaluate Chebyshev polynomials
+<a href="http://www.storage-b.com/math-numerical-analysis/27">C++ functions which evaluate Chebyshev polynomials</a>
 
 T0(x):
   double T0(double x) ;
