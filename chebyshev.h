@@ -2,7 +2,7 @@
 /**
  *  chebyshev.h -- C++ functions to evaluate Chebyshev polynomials
  *
- *  Copyright (C) 2007 by James A. Chappell (rlrrlrll@gmail.com)
+ *  Copyright (C) 2014 by James A. Chappell (rlrrlrll@gmail.com)
  *
  *  Permission is hereby granted, free of charge, to any person
  *  obtaining a copy of this software and associated documentation
@@ -24,13 +24,14 @@
  */
 //=================================================================
 /*
- * chebyshev.h:  Version 0.01
+ * chebyshev.h:  Version 0.02
  * Created by James A. Chappell <rlrrlrll@gmail.com>
  * http://www.storage-b.com/math-numerical-analysis/27
- * Created 29 September 2005
+ * Created 28 July 2007
  *
  * History:
  * 28-jul-2007  created
+ * 14-nov-2014  templates
  */
 //==============
 
@@ -43,52 +44,52 @@
 namespace Chebyshev
 {
   // n = 0
-  inline double T0(double x)
+  template <class T> inline T T0(T x)
   {
-    return 1.0 ;
+    return static_cast<T>(1.0) ;
   }
 
   // n = 1
-  inline double T1(double x)
+  template <class T> inline T T1(T x)
   {
     return x ;
   }
 
   // n = 2
-  inline double T2(double x)
+  template <class T> inline T T2(T x)
   {
-    return (2.0 * x*x) - 1.0 ;
+    return (static_cast<T>(2.0) * x*x) - static_cast<T>(1.0) ;
   }
 
 /*
  *	Tn(x)
  */
-  inline double Tn(unsigned int n, double x)
+  template <class T> inline T Tn(unsigned int n, T x)
   {
     if (n == 0)
     {
-      return T0(x) ;
+      return T0<T>(x) ;
     }
     else if (n == 1)
     {
-      return T1(x) ;
+      return T1<T>(x) ;
     }
     else if (n == 2)
     {
-      return T2(x) ;
+      return T2<T>(x) ;
     }
 
 /* We could simply do this:
     return (2.0 * x * Tn(n - 1, x)) - Tn(n - 2, x) ;
    but it could be slow for large n */
  
-    double tnm1(T2(x)) ;
-    double tnm2(T1(x)) ;
-    double tn(tnm1) ;
+    T tnm1(T2<T>(x)) ;
+    T tnm2(T1<T>(x)) ;
+    T tn(tnm1) ;
 
     for (unsigned int l = 3 ; l <= n ; l++)
     { 
-      tn = (2.0 * x * tnm1) - tnm2 ;
+      tn = (static_cast<T>(2.0) * x * tnm1) - tnm2 ;
       tnm2 = tnm1;
       tnm1 = tn;
     }

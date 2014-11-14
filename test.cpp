@@ -13,7 +13,7 @@ int main()
   {
     for (double x = -1.0 ; x <= 1.0 ; x = x + 0.1)
     { 
-      tn = Tn(n, x) ;
+      tn = Tn<double>(n, x) ;
       cout << "T" << n << "(" << x << ") = " << tn << endl ;
     }
     cout << endl ;
