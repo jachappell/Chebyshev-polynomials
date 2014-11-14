@@ -44,19 +44,19 @@
 namespace Chebyshev
 {
   // n = 0
-  template <class T> inline T T0(T x)
+  template <class T> inline T T0(const T& x)
   {
     return static_cast<T>(1.0) ;
   }
 
   // n = 1
-  template <class T> inline T T1(T x)
+  template <class T> inline T T1(const T& x)
   {
     return x ;
   }
 
   // n = 2
-  template <class T> inline T T2(T x)
+  template <class T> inline T T2(const T& x)
   {
     return (static_cast<T>(2.0) * x*x) - static_cast<T>(1.0) ;
   }
@@ -64,7 +64,7 @@ namespace Chebyshev
 /*
  *	Tn(x)
  */
-  template <class T> inline T Tn(unsigned int n, T x)
+  template <class T> inline T Tn(unsigned int n, const T& x)
   {
     if (n == 0)
     {
