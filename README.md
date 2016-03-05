@@ -1,7 +1,7 @@
 Chebyshev-polynomials
 =====================
 
-<a href="http://www.storage-b.com/math-numerical-analysis/27">C++ functions which evaluate Chebyshev polynomials</a>
+<a href="https://www.storage-b.com/math-numerical-analysis/27">C++ functions which evaluate Chebyshev polynomials</a>
 
 T<sub>0</sub>(x):<br />
 &nbsp;&nbsp;&nbsp;&nbsp;template &lt;class T&gt; T T0(const T& x) ;
