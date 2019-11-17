@@ -128,6 +128,24 @@ BOOST_AUTO_TEST_CASE(TnXequalsZero)
   BOOST_TEST(val2 == 0.0);
 }
 
+BOOST_AUTO_TEST_CASE(TnMinusPlus)
+{
+  auto n1 = iRan();
+  auto n2 = n1 + 1;
+
+  auto x = dRan();
+
+  auto val1 = Chebyshev::Tn<double>(n1, x);
+  auto val2 = Chebyshev::Tn<double>(n1, -x);
+
+  BOOST_TEST(val1 == (n1 % 2 == 0 ? val2 : -val2));
+
+  val1 = Chebyshev::Tn<double>(n2, x);
+  val2 = Chebyshev::Tn<double>(n2, -x);
+
+  BOOST_TEST(val1 == (n2 % 2 == 0 ? val2 : -val2));
+}
+
 BOOST_AUTO_TEST_CASE(Tn05)
 {
   BOOST_TEST(Chebyshev::Tn<float>(2, -0.05) == -0.995, tol);
