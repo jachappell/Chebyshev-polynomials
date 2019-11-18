@@ -4,7 +4,7 @@ Chebyshev-polynomials
 <a href="https://www.storage-b.com/math-numerical-analysis/27">C++ functions which evaluate Chebyshev polynomials</a>
 
 
-Chebyshev Polynomials of the first kind:
+<strong>Chebyshev Polynomials of the first kind:</strong><br />
 T<sub>0</sub>(x):<br />
 &nbsp;&nbsp;&nbsp;&nbsp;template &lt;class T&gt; T T0(const T& x);
 
@@ -17,7 +17,7 @@ T<sub>2</sub>(x):<br />
 T<sub>n</sub>(x):<br />
 &nbsp;&nbsp;&nbsp;&nbsp;template &lt;class T&gt; T Tn(unsigned int n, const T& x);
 
-Chebyshev Polynomials of the second kind:
+<strong>Chebyshev Polynomials of the second kind:</strong><br />
 U<sub>0</sub>(x):<br />
 &nbsp;&nbsp;&nbsp;&nbsp;template &lt;class T&gt; T U0(const T& x);
 
