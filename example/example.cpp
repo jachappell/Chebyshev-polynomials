@@ -1,20 +1,33 @@
-#include <iostream>
 #include "chebyshev.h"
 
-using namespace std ;
-using namespace Chebyshev ;
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+using namespace Storage_B::Chebyshev;
 
 int main()
 {
-  double tn ;
+  double val ;
 
   cout.precision(5) ;
-  for (unsigned int n = 0 ; n <= 5 ; n++)
+  for (auto n = 0u ; n <= 5 ; ++n)
   {
-    for (double x = -1.0 ; x <= 1.0 ; x = x + 0.1)
+    for (auto x = -1.0 ; x <= 1.0 ; x += 0.1)
     { 
-      tn = Tn<double>(n, x) ;
-      cout << "T" << n << "(" << x << ") = " << tn << endl ;
+      val = Tn<double>(n, x) ;
+      cout << "T" << n << "(" << x << ") = " << val << endl ;
+    }
+    cout << endl ;
+  }
+  cout << endl ;
+
+  for (auto n = 0u ; n <= 5 ; ++n)
+  {
+    for (auto x = -1.0 ; x <= 1.0 ; x += 0.1)
+    { 
+      val = Un<double>(n, x) ;
+      cout << "U" << n << "(" << x << ") = " << val << endl ;
     }
     cout << endl ;
   }
