@@ -24,7 +24,7 @@
  */
 //=================================================================
 /*
- * chebyshev.h:  Version 0.02
+ * chebyshev.h:  Version 0.03
  * Created by James A. Chappell <rlrrlrll@gmail.com>
  * http://www.storage-b.com/math-numerical-analysis/27
  * Created 28 July 2007
@@ -33,6 +33,7 @@
  * 28-jul-2007  created
  * 14-nov-2014  templates
  * 15-nov-2019  deduced types
+ * 18-nov-2019  add second kind
  */
 //==============
 
@@ -157,7 +158,6 @@ namespace Storage_B
       }
 
       return un;
-
     }
   }
 }
