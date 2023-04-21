@@ -2,7 +2,7 @@ PROG=tests
 OBJDIR=.obj
 CC=g++
 
-CFLAGS = -Wall --std=c++1z -I ..
+CFLAGS = -Wall -std=c++20 -I ..
 
 $(shell mkdir -p $(OBJDIR)) 
 
